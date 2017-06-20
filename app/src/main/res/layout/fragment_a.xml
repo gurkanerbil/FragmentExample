@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:hint="Write here something."
         android:textColor="#ffffff"
-        android:textColorHint="#767676"/>
+        android:textColorHint="#767676" />
     <Button
         android:id="@+id/sending_button"
         android:layout_width="match_parent"

@@ -32,9 +32,10 @@
 
         <fragment
             android:id="@+id/fragment_a"
-            android:name="com.erbil.fragmentexample.FragmentA"
+            android:name="com.erbil.fragmentexample.Fragment.FragmentA"
             android:layout_width="match_parent"
-            android:layout_height="200dp" />
+            android:layout_height="200dp"
+            />
 
     </RelativeLayout>
 
@@ -47,7 +48,7 @@
 
         <fragment
             android:id="@+id/fragment_b"
-            android:name="com.erbil.fragmentexample.FragmentA"
+            android:name="com.erbil.fragmentexample.Fragment.FragmentB"
             android:layout_width="match_parent"
             android:layout_height="100dp" />
 
