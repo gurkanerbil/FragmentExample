@@ -1,12 +1,16 @@
 package com.erbil.fragmentexample;
 
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+import com.erbil.fragmentexample.Fragment.FragmentA;
+
+public class MainActivity extends AppCompatActivity implements MainView, View.OnClickListener {
 
     MainPresenter presenter;
+    FragmentA fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,6 +19,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         findViewById(R.id.button1).setOnClickListener(this);
         findViewById(R.id.button2).setOnClickListener(this);
+        FragmentManager fragmentManager = getFragmentManager();
+        fragment = (FragmentA) fragmentManager.findFragmentById(R.id.fragment_a);
 
         presenter = new MainPresenterImpl(this);
     }
@@ -23,5 +29,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         findViewById(R.id.fragment_a_layout).setVisibility(View.VISIBLE);
         presenter.sendText(v);
+    }
+
+    @Override
+    public void setFragmentText(String name) {
+        fragment.setText("Button " + name  + " clicked...");
     }
 }
